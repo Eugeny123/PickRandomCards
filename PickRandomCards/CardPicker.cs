@@ -15,7 +15,7 @@ namespace PickRandomCards
 
             for (int i = 0; i < numberOfCards; i++)
             {
-                pickerCards[i] = RandomValue() + "of" + RandomSuit();
+                pickerCards[i] = RandomValue() + " of " + RandomSuit();
             }
             return pickerCards;
         }
