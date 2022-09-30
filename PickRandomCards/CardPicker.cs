@@ -13,7 +13,7 @@ namespace PickRandomCards
         {
             string[] pickerCards = new string[numberOfCards];
 
-            for (int i=0; i < numberOfCards; i++)
+            for (int i = 0; i < numberOfCards; i++)
             {
                 pickerCards[i] = RandomValue() + "of" + RandomSuit();
             }
@@ -22,7 +22,7 @@ namespace PickRandomCards
 
         private static string RandomSuit()
         {
-            int value = random.Next(1,5);
+            int value = random.Next(1, 5);
             if (value == 1) return "Spades";
             if (value == 2) return "Hearts";
             if (value == 3) return "Clubs";
@@ -32,7 +32,11 @@ namespace PickRandomCards
         private static string RandomValue()
         {
             int value = random.Next(1, 14);
-            return;
+            if (value == 1) return "Ace";
+            if (value == 11) return "Jack";
+            if (value == 12) return "Queen";
+            if (value == 13) return "King";
+            return value.ToString();
         }
     }
 }
