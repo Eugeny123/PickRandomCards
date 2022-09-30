@@ -8,6 +8,7 @@ namespace PickRandomCards
 {
     internal class CardPicker
     {
+        static Random random = new Random();
         public static string[] PickSomeCards(int numberOfCards)
         {
             string[] pickerCards = new string[numberOfCards];
@@ -21,11 +22,16 @@ namespace PickRandomCards
 
         private static string RandomSuit()
         {
-            return;
+            int value = random.Next(1,5);
+            if (value == 1) return "Spades";
+            if (value == 2) return "Hearts";
+            if (value == 3) return "Clubs";
+            return "Diamonds";
         }
 
         private static string RandomValue()
         {
+            int value = random.Next(1, 14);
             return;
         }
     }
